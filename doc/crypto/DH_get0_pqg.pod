@@ -42,15 +42,14 @@ after this function has been called. The B<q> parameter may be NULL.
 To get the public and private key values use the DH_get0_key() function. A
 pointer to the public key will be stored in B<*pub_key>, and a pointer to the
 private key will be stored in B<*priv_key>. Either may be NULL if they have not
-been set yet, although if the private key has been set then the public key must
-be. The values point to the internal representation of the public key and
-private key values. This memory should not be freed directly.
+been set yet. The values point to the internal representation of the public key
+and private key values. This memory should not be freed directly.
 
-The public and private key values can be set using DH_set0_key(). The public
-key must always be non-NULL. The private key may be NULL. As for DH_set0_pqg()
-this function transfers the memory management of the key values to the DH
-object, and therefore they should not be freed directly after this function has
-been called.
+The public and private key values can be set using DH_set0_key(). At least one
+of B<pub_key> and B<priv_key> must be non-NULL. As for DH_set0_pqg() this
+function transfers the memory management of the key values to the DH object,
+and therefore they should not be freed directly after this function has been
+called.
 
 DH_set_flags() sets the flags in the B<flags> parameter on the DH object.
 Multiple flags can be passed in one go (bitwise ORed together). Any flags that

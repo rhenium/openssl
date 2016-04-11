@@ -283,8 +283,8 @@ void DH_get0_key(const DH *dh, BIGNUM **pub_key, BIGNUM **priv_key)
 
 int DH_set0_key(DH *dh, BIGNUM *pub_key, BIGNUM *priv_key)
 {
-    /* Note that it is valid for priv_key to be NULL */
-    if (pub_key == NULL)
+    /* at least one must be non-NULL */
+    if (pub_key == NULL && priv_key == NULL)
         return 0;
 
     BN_free(dh->pub_key);
