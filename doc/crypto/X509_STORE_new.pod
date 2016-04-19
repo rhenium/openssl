@@ -31,6 +31,6 @@ X509_STORE_free() does not return values.
 
 =head1 SEE ALSO
 
-L<X509_STORE_set_verify_cb_func(3)>
+L<X509_STORE_set_verify_cb(3)>
 
 =cut

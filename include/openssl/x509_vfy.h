@@ -104,9 +104,6 @@ DEFINE_STACK_OF(X509_VERIFY_PARAM)
 
 int X509_STORE_set_depth(X509_STORE *store, int depth);
 
-# define X509_STORE_set_verify_cb_func(ctx,func) ((ctx)->verify_cb=(func))
-# define X509_STORE_set_verify_func(ctx,func)    ((ctx)->verify=(func))
-
 void X509_STORE_CTX_set_depth(X509_STORE_CTX *ctx, int depth);
 
 # define X509_STORE_CTX_set_app_data(ctx,data) \

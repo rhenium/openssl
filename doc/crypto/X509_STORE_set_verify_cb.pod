@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-X509_STORE_set_verify_cb_func, X509_STORE_set_verify_cb - set verification callback
+X509_STORE_set_verify_cb - set verification callback
 
 =head1 SYNOPSIS
 
@@ -11,16 +11,10 @@ X509_STORE_set_verify_cb_func, X509_STORE_set_verify_cb - set verification callb
  void X509_STORE_set_verify_cb(X509_STORE *st,
 				int (*verify_cb)(int ok, X509_STORE_CTX *ctx));
 
- void X509_STORE_set_verify_cb_func(X509_STORE *st,
-				int (*verify_cb)(int ok, X509_STORE_CTX *ctx));
-
 =head1 DESCRIPTION
 
 X509_STORE_set_verify_cb() sets the verification callback of B<ctx> to
 B<verify_cb> overwriting any existing callback.
-
-X509_STORE_set_verify_cb_func() also sets the verification callback but it
-is implemented as a macro.
 
 =head1 NOTES
 
@@ -36,8 +30,7 @@ OpenSSL 1.0.0.
 
 =head1 RETURN VALUES
 
-X509_STORE_set_verify_cb() and X509_STORE_set_verify_cb_func() do not return
-a value.
+X509_STORE_set_verify_cb() does not return a value.
 
 =head1 SEE ALSO
 
@@ -47,5 +40,6 @@ L<CMS_verify(3)>
 =head1 HISTORY
 
 X509_STORE_set_verify_cb() was added to OpenSSL 1.0.0.
+X509_STORE_set_verify_cb_func() macro existed in OpenSSL versions before 1.1.0.
 
 =cut
